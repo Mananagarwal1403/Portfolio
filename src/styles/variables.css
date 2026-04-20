@@ -1,0 +1,22 @@
+:root {
+  /* Bluish Dark Backgrounds */
+  --bg-main: #0b1220;        /* deep navy blue */
+  --bg-section: #0e1627;     /* slightly lighter section */
+  --bg-card: #141e33;        /* card surface */
+  --bg-glass: rgba(14, 22, 39, 0.75);
+
+  /* Text */
+  --text-primary: #f1f5f9;
+  --text-secondary: #b6c2d1;
+  --text-muted: #8a96a8;
+
+  /* Accent */
+  --accent: #7b8cff;
+
+  /* Layout */
+  --max-width: 1100px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+}
+
+

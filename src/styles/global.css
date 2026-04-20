@@ -1,0 +1,522 @@
+@import "./variables.css";
+@import "./animations.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.section {
+  padding: 6rem 1.5rem;
+  background: var(--bg-section);
+}
+
+.section-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.2rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 100;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.navbar-links a {
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--text-primary);
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#intro {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    180deg,
+    #0b1220 0%,
+    #0e1627 60%,
+    #0b1220 100%
+  );
+}
+
+#intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 70% 30%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 90% 60%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,0.6), transparent);
+
+  background-size: 400px 400px;
+  animation: starsFloat 140s linear infinite;
+
+  opacity: 0.5;
+  z-index: 0;
+}
+
+#intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at 60% 40%,
+    rgba(123, 140, 255, 0.2),
+    transparent 65%
+  );
+
+  z-index: 0;
+}
+
+#intro .section-container {
+  position: relative;
+  z-index: 2;
+}
+
+.intro-name {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #bfc7ff;
+  margin-bottom: 0.5rem;
+}
+
+.intro-role {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.intro-content-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+
+  padding: 1.8rem 2rem;
+
+  color: var(--text-secondary);
+  line-height: 1.6;
+
+  width: 100%;
+}
+
+.intro-content-card p {
+  margin-bottom: 1rem;
+}
+
+.intro-actions {
+  margin-top: 1.5rem;
+}
+
+.intro-connect {
+  margin-top: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.project-card,
+.cert-card,
+.edu-card,
+.exp-card,
+.hobby-card,
+.hobbies-card {
+  background: var(--bg-card);
+
+  padding: 1.5rem;
+
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.05);
+
+  width: 100%;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.project-card:hover,
+.cert-card:hover,
+.edu-card:hover,
+.exp-card:hover,
+.hobby-card:hover,
+.hobbies-card:hover {
+  transform: translateY(-6px) scale(1.01);
+
+  border-color: rgba(123, 140, 255, 0.5);
+
+  box-shadow:
+    0 10px 30px rgba(123, 140, 255, 0.15),
+    0 0 0 1px rgba(123, 140, 255, 0.15);
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-chip {
+  background: var(--bg-card);
+
+  padding: 0.45rem 1rem;
+
+  border-radius: 999px;
+  font-size: 0.85rem;
+
+  color: var(--text-primary);
+  font-weight: 500;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+.skill-chip:hover {
+  transform: translateY(-2px) scale(1.05);
+
+  background: rgba(123, 140, 255, 0.15);
+
+  color: var(--text-primary);
+  font-weight: 600;
+
+  box-shadow: 0 4px 12px rgba(123, 140, 255, 0.25);
+}
+
+.projects-stack,
+.education-stack,
+.experience-stack,
+.cert-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.edu-date,
+.cert-platform,
+.exp-header span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.edu-degree,
+.exp-role {
+  margin-top: 0.4rem;
+  color: var(--text-secondary);
+}
+
+.edu-score {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.exp-card ul,
+.cert-skills {
+  padding-left: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.exp-card li,
+.cert-skills li {
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.hobbies-heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.hobbies-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+
+.hobbies-list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.hobbies-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+
+  line-height: 1.5;
+}
+
+.project-card ul,
+.cert-card ul,
+.edu-card ul,
+.exp-card ul,
+.hobbies-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-card li,
+.cert-card li,
+.edu-card li,
+.exp-card li,
+.hobbies-card li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.project-card li::before,
+.cert-card li::before,
+.edu-card li::before,
+.exp-card li::before,
+.hobbies-card li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.footer {
+  background: linear-gradient(
+    180deg,
+    #0b1220 0%,
+    #0e1627 60%,
+    #0b1220 100%
+  );
+
+  padding: 3rem 2rem;
+}
+
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 2rem;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.footer-subtext {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-icons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.footer-icon {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+
+  transition: 
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.footer-icon:hover {
+  transform: translateY(-2px) scale(1.1);
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .intro-name {
+    font-size: 2.6rem;
+  }
+
+  .section {
+    padding: 5rem 1.2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    padding: 1rem 1.2rem;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .intro-name {
+    font-size: 2.2rem;
+  }
+
+  .intro-content-card {
+    padding: 1.4rem 1.4rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-icons {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-name {
+    font-size: 1.9rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .skills-grid {
+    gap: 0.6rem;
+  }
+
+  .skill-chip {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+.project-card {
+  color: var(--text-primary);
+}
+
+.project-card h3 {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+
+.project-tech {
+  color: var(--text-muted);
+}
+
+
+.project-card p,
+.project-card li {
+  color: var(--text-secondary);
+}
+
+.project-github {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
