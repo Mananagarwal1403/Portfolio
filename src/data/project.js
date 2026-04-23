@@ -22,6 +22,17 @@ const projects = [
     ],
     github: "https://github.com/your-username/spotify-clone",
   },
+  {
+    id: 1,
+    title: "Student Dropout Prediction System",
+    tech: "Python, Scikit-learn, Pandas, Streamlit",
+    highlights: [
+      "Developed and deployed a machine learning-based system using Random Forest, Logistic Regression, and Decision Tree to predict student dropout risk (~85% accuracy).",
+      "Performed data preprocessing, feature selection, and handled class imbalance using SMOTE with hyperparameter tuning via GridSearchCV.",
+      "Built an interactive Streamlit dashboard for real-time predictions based on key factors such as grades, approved subjects, attendance, scholarship status, and economic indicators.",
+    ],
+    github: "https://github.com/Mananagarwal1403/Student-Dropout-Prediction-System",
+  },
 ];
 
 export default projects;

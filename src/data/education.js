@@ -4,7 +4,7 @@ const education = [
     institution: "Bharati Vidyapeeth College of Engineering ",
     degree: "B.Tech in Computer Science Engineering",
     duration: "2022 – 2026",
-    score: "CGPA: 7.58",
+    score: "CGPA: 8.0",
   },
   {
     id: 2,

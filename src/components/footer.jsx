@@ -21,7 +21,7 @@ const Footer = () => {
 
           {/* Email */}
           <a
-            href="mailto:your-email@gmail.com"
+            href="manan.agarwal1403@gmail.com"
             aria-label="Email"
             className="footer-icon"
           >
@@ -30,7 +30,7 @@ const Footer = () => {
 
           {/* GitHub */}
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/Mananagarwal1403"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -41,7 +41,7 @@ const Footer = () => {
 
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com/in/your-profile"
+            href="www.linkedin.com/in/manan-agarwal1403"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
