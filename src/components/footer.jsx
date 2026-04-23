@@ -21,7 +21,7 @@ const Footer = () => {
 
           {/* Email */}
           <a
-            href="manan.agarwal1403@gmail.com"
+            href="mail-to:manan.agarwal1403@gmail.com"
             aria-label="Email"
             className="footer-icon"
           >
